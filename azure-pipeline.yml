@@ -20,9 +20,6 @@ jobs:
       name: 'pool-ubuntu-latest-multi-core'
     strategy:
       matrix:
-        Python310:
-          python.version: '3.10'
-          tox_env: 'py310'
         Python311:
           python.version: '3.11'
           tox_env: 'py311'
@@ -35,6 +32,9 @@ jobs:
         Python314:
           python.version: '3.14'
           tox_env: 'py314'
+        Python315:
+          python.version: '3.15'
+          tox_env: 'py315'
     steps:
       - task: UsePythonVersion@0
         displayName: 'Use Python $(python.version)'
@@ -57,7 +57,7 @@ jobs:
     steps:
       - task: UsePythonVersion@0
         inputs:
-          versionSpec: '3.14'
+          versionSpec: '3.15'
       - bash: |
           set -ev
 
